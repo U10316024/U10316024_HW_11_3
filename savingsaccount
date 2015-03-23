@@ -1,0 +1,38 @@
+class SavingsAccount extends Account{
+
+	//no-arg constructor
+	SavingsAccount() {}
+
+	//constructor
+	SavingsAccount(int id, double balance) {
+
+		super(id,balance);
+
+	}	
+
+	public void setAnnualInterestRate(double annualInterestRate) {
+
+		super.setAnnualInterestRate(annualInterestRate);
+
+	}
+
+	public void deposit() {
+		
+		super.deposit();
+
+	}
+
+	public void withdraw() {
+		
+		super.withdraw();
+
+	}
+
+	@Override
+	public String toString() {
+
+		return super.toString();
+
+	}
+
+}
