@@ -1,0 +1,58 @@
+class CheckingAccount extends Account{
+
+	double balance;
+
+	//no-arg constructor
+	CheckingAccount() {}
+
+	//constructor
+	CheckingAccount(int iid, double bbalance) {
+		
+		super(iid,bbalance);
+		this.balance = bbalance;
+
+	}
+
+	public void setAnnualInterestRate(double annualInterestRate) {
+
+		super.setAnnualInterestRate(annualInterestRate);
+
+	}
+
+	public void deposit() {
+
+		super.deposit();
+
+	}
+
+	public void withdraw() {		
+
+		System.out.println("\n你有5000元的餘額可以提領！");
+
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("\nHow many dollars do you want to take?");
+		int user = input.nextInt();
+
+		balance = balance + 5000 - user;
+
+		
+		if (balance >= 0) {
+
+			System.out.println("You have " + balance + " dollars.\n");
+
+		}else {
+			
+			System.out.println("You cannot take more money!\n");
+
+		}
+	}
+
+	@Override
+	public String toString() {
+
+		return super.toString();
+
+	}
+
+}
