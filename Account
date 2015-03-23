@@ -1,0 +1,131 @@
+class Account{
+
+	//data fields
+	private int id;
+	private double balance;
+	private double annualInterestRate;
+	private Date dateCreated;
+	
+	//no-arg constructor
+	Account(){
+
+		dateCreated = new Date();
+		id = 0;
+		balance = 0;
+		annualInterestRate = 0;
+	}
+	
+	//constrcutor
+	Account(int id, double balance){
+
+		dateCreated = new Date();
+		this.id = id;
+		this.balance = balance;
+	}
+
+	//get method
+	public Date getDateCreated() {
+
+		return dateCreated;
+
+	}
+
+	//get method
+	public int getId() {
+
+		return id;
+
+	}
+
+	//get method
+	public double getBalance() {
+
+		return balance;
+
+	}
+
+	//get method
+	public double getAnnualInterestRate() {
+
+		return annualInterestRate/100;
+
+	}
+
+	//get method
+	public double getMonthlyInterestRate() {
+
+		return annualInterestRate/1200;
+
+	}
+
+	//get method
+	public double getMonthlyInterest() {
+
+		return balance*getMonthlyInterestRate();
+
+	}
+
+	//set method
+	public void setId(int id) {
+
+		this.id = id;
+	
+	}
+
+	//set method
+	public void setBalance(double balance) {
+
+		this.balance = balance;
+
+	}
+
+	//set method
+	public void setAnnualInterestRate(double annualInterestRate) {
+
+		this.annualInterestRate = annualInterestRate;
+
+	}
+	
+	//set method
+	public String toString() {
+
+		return "Id: " + getId() +  "\nBalance: " + getBalance() + "\nMonthlyInterest: " + getMonthlyInterest() + "\nDate: " + getDateCreated();		
+
+	}
+
+	//deposit method
+	public void deposit() {
+
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("\nHow many dollars do you want to save?");
+		int user = input.nextInt();
+		
+		balance = balance + user;
+
+		System.out.println("You have " + balance + " dollars.");
+
+	}
+
+	//withdraw method
+	public void withdraw() {
+
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("\nHow many dollars do you want to take?");
+		int user = input.nextInt();
+
+		balance = balance - user;
+
+		if (balance >= 0) {
+
+			System.out.println("You have " + balance + " dollars.\n");
+
+		}else {
+			
+			System.out.println("You cannot take more money!\n");
+
+		}
+
+	}
+}
