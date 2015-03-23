@@ -1,0 +1,46 @@
+class TestAccount {
+
+	//Main method
+	public static void main(String[] args){
+		
+		Account account = new Account(1122,20000);
+
+		account.setAnnualInterestRate(4.5);
+
+		//invoke deposit method
+		account.deposit();
+
+		//invoke withdraw method
+		account.withdraw();
+
+		//print result
+		System.out.println(account.toString());
+		
+		
+		SavingsAccount s = new SavingsAccount(1122,20000);
+
+		//invoke deposit method
+		s.deposit();
+
+		//invoke withdraw method
+		s.withdraw();
+
+		s.setAnnualInterestRate(4.5);
+
+		//print result
+		System.out.println(s.toString());
+
+		CheckingAccount c = new CheckingAccount(1122,20000);
+
+		//invoke deposit method
+		c.deposit();
+
+		//invoke withdraw method
+		c.withdraw();
+		
+		c.setAnnualInterestRate(4.5);
+		
+		//print result
+		System.out.println(c.toString());
+	}
+}
